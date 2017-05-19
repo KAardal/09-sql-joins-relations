@@ -80,7 +80,7 @@ app.put('/articles/:id', function(request, response) {
     `UPDATE authors
     SET author = $1, "authorUrl" = $2
     WHERE author_id = $3;`,
-    [request.body.author, request.body.authorUrl, request.params.id]
+    [request.body.author, request.body.authorUrl, request.body.author_id]
   )
   .then(function() {
     // TODO: Write a SQL query to update an article record. Keep in mind that article records
